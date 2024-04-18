@@ -15,7 +15,7 @@ describe 'Psicologo cria conta' do
   end
 
   context 'sem sucesso' do
-    it 'e todos os campos são obrigatórios' do
+    it 'porque todos os campos são obrigatórios' do
       visit new_psychologist_registration_path
       fill_in 'E-mail', with: ''
       fill_in 'Senha', with: ''
@@ -26,7 +26,7 @@ describe 'Psicologo cria conta' do
       expect(page).to have_content 'Senha não pode ficar em branco'
     end
 
-    it 'e a senha deve ser igual a confirmação' do
+    it 'porque a senha deve ser igual a confirmação' do
       visit new_psychologist_registration_path
       fill_in 'E-mail', with: 'luis@psicologo.com'
       fill_in 'Senha', with: '123456'
@@ -36,7 +36,7 @@ describe 'Psicologo cria conta' do
       expect(page).to have_content 'Confirmação de senha não é igual a Senha'
     end
 
-    it 'e email já cadastrado' do
+    it 'porque email já cadastrado' do
       psychologist = Psychologist.create!(email: 'luis@psicologo.com', password: '123456')
   
       visit new_psychologist_registration_path
