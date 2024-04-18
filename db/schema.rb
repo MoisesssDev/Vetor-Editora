@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_17_235203) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_18_151510) do
+  create_table "evaluateds", force: :cascade do |t|
+    t.string "name"
+    t.string "cpf"
+    t.string "email"
+    t.date "birthdate"
+    t.integer "psychologist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["psychologist_id"], name: "index_evaluateds_on_psychologist_id"
+  end
+
   create_table "psychologists", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -23,4 +34,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_17_235203) do
     t.index ["reset_password_token"], name: "index_psychologists_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "evaluateds", "psychologists"
 end

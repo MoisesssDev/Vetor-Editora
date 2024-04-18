@@ -1,0 +1,30 @@
+<h1> Cadastro de novo avaliado </h1>
+
+<%= form_with(model: @evaluated, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthdate %>
+    <%= form.date_field :birthdate %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Cadastrar' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', root_path %>

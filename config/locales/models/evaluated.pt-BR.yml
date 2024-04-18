@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      evaluated:
+        one: Avaliado
+        other: Avaliados
+    attributes:
+      evaluated:
+        email: 'E-mail'
+        name: 'Nome'
+        birthdate: 'Data de nascimento'
+        cpf: 'CPF'
+        

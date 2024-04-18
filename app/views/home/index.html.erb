@@ -2,6 +2,14 @@
 <div>
   <% if psychologist_signed_in? %>
     <p>Adicione paciente</p>
+    <%= link_to 'Cadastrar avaliado', new_evaluated_path %>
+
+    <p>Lista de pacientes</p>
+    
+    <% @evaluateds.each do |evaluated| %>
+      <p><%= evaluated.name %></p>
+    <% end %>
+
   <% else %>
     <%= link_to 'Entrar como Psicólogo', new_psychologist_session_path %>
   <% end %>
