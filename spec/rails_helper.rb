@@ -22,7 +22,6 @@ RSpec.configure do |config|
   config.before(type: :system) do
     driven_by(:rack_test)
   end
-
   
   config.use_transactional_fixtures = true
 
@@ -31,5 +30,7 @@ RSpec.configure do |config|
 
   
   config.filter_rails_from_backtrace!
+
+  config.include Warden::Test::Helpers
   
 end
