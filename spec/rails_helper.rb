@@ -19,10 +19,12 @@ RSpec.configure do |config|
     Rails.root.join('spec/fixtures')
   ]
 
+  config.before(type: :system) do
+    driven_by(:rack_test)
+  end
+
   
   config.use_transactional_fixtures = true
-
-  Capybara.default_driver = :rack_test
 
  
   config.infer_spec_type_from_file_location!
