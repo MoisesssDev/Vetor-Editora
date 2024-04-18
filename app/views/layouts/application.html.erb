@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <nav id="navbar">
+      <% if psychologist_signed_in? %>
+        <%= button_to t(:log_out), destroy_psychologist_session_path, method: :delete %>
+        <%= current_psychologist.email %>
+      <%end%>
+    </nav>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

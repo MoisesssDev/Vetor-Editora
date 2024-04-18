@@ -1,4 +1,8 @@
+<h1>Home</h1>
 <div>
-  <h1>Home</h1>
-  <%= link_to 'Entrar como Psicólogo', new_psychologist_session_path %>
+  <% if psychologist_signed_in? %>
+    <p>Adicione paciente</p>
+  <% else %>
+    <%= link_to 'Entrar como Psicólogo', new_psychologist_session_path %>
+  <% end %>
 </div>
