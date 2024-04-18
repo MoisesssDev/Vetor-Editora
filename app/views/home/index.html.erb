@@ -7,7 +7,7 @@
     <p>Lista de pacientes</p>
     
     <% @evaluateds.each do |evaluated| %>
-      <p><%= evaluated.name %></p>
+      <p><%= link_to evaluated.name, evaluated_path(evaluated) %></p>
     <% end %>
 
   <% else %>

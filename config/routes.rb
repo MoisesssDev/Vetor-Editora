@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :evaluateds, only: %i[new create]
+  resources :evaluateds, only: %i[new create show]
 end

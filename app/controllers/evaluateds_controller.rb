@@ -17,6 +17,10 @@ class EvaluatedsController < ApplicationController
 
   end
 
+  def show
+    @evaluated = Evaluated.find(params[:id])
+  end
+
   private
 
   def set_psychologist
