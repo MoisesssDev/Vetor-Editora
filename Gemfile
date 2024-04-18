@@ -21,6 +21,7 @@ gem "jbuilder"
 
 gem 'devise', '~> 4.9'
 
+gem 'devise-i18n'
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
