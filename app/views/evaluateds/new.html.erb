@@ -2,6 +2,18 @@
 
 <%= form_with(model: @evaluated, local: true) do |form| %>
 
+  <% if @evaluated.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evaluated.errors.count, "error") %> Não foi possível cadastrar o avaliado:</h2>
+
+      <ul>
+      <% @evaluated.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
