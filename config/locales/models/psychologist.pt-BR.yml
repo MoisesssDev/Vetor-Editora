@@ -8,3 +8,4 @@ pt-BR:
       psychologist:
         email: 'E-mail'
         password: 'Senha'
+        password_confirmation: 'Confirmação de senha'
