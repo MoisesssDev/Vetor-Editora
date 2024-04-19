@@ -10,15 +10,24 @@ class InstrumentsController < ApplicationController
 
   def apply
     instrument = Instrument.find(params[:id])
-    evaluateds_ids = params[:evaluateds_ids]
+    if params[:evaluateds_ids].present?
+      evaluateds_ids = params[:evaluateds_ids]
 
-    evaluateds = Evaluated.where(id: evaluateds_ids)
+      create_instruments_applied(evaluateds_ids, instrument)
 
-    evaluateds.each do |evaluated|
-      instrument.instruments_applied.create(evaluated: evaluated, status: :not_started)
+      redirect_to root_path, notice: 'Instrumento aplicado com sucesso'
+    else
+      redirect_to select_evaluateds_instrument_path(instrument), alert: 'Nenhum avaliado selecionado'
     end
 
-    redirect_to root_path, notice: 'Instrumento aplicado com sucesso'
+  end
+
+  private 
+
+  def create_instruments_applied(evaluateds_ids, instrument)
+    evaluateds_ids.each do |evaluated_id|
+      instrument.instruments_applied.create(evaluated_id: evaluated_id, status: :not_started)
+    end
   end
 
 end
