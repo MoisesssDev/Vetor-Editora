@@ -1,10 +1,10 @@
 <h1> Cadastro de novo avaliado </h1>
 
-<%= form_with(model: @evaluated, local: true) do |form| %>
+<%= form_with(model: @evaluated, local: true, data: { turbo: false }) do |form| %>
 
   <% if @evaluated.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@evaluated.errors.count, "error") %> Não foi possível cadastrar o avaliado:</h2>
+      <h2>Não foi possível cadastrar o avaliado:</h2>
 
       <ul>
       <% @evaluated.errors.full_messages.each do |message| %>
