@@ -1,4 +1,6 @@
 class InstrumentsController < ApplicationController
+  before_action :authenticate_psychologist!
+
   def index
     @instruments = Instrument.all
   end
