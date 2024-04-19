@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_18_151510) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_19_195112) do
   create_table "evaluateds", force: :cascade do |t|
     t.string "name"
     t.string "cpf"
@@ -20,6 +20,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_18_151510) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["psychologist_id"], name: "index_evaluateds_on_psychologist_id"
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "instruments_applieds", force: :cascade do |t|
+    t.integer "result"
+    t.string "status"
+    t.integer "instrument_id", null: false
+    t.integer "evaluated_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["evaluated_id"], name: "index_instruments_applieds_on_evaluated_id"
+    t.index ["instrument_id"], name: "index_instruments_applieds_on_instrument_id"
   end
 
   create_table "psychologists", force: :cascade do |t|
@@ -35,4 +53,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_18_151510) do
   end
 
   add_foreign_key "evaluateds", "psychologists"
+  add_foreign_key "instruments_applieds", "evaluateds"
+  add_foreign_key "instruments_applieds", "instruments"
 end

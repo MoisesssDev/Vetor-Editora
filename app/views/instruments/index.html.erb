@@ -1,0 +1,10 @@
+<div>
+  <% @instruments.each do |instrument| %>
+    <div>
+      <h3><%= instrument.name %></h3>
+      <p><%= instrument.description %></p>
+      <%= link_to 'Aplicar instrumento', select_evaluateds_instrument_path(instrument) %>
+    </div>
+  
+  <% end %>
+</div>
