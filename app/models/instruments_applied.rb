@@ -3,7 +3,7 @@ class InstrumentsApplied < ApplicationRecord
   belongs_to :evaluated
 
   enum status: {
-    not_started: 'not_started',
-    finished: 'finished'
+    not_started: 'Não iniciado',
+    finished: 'Finalizado',
   }
 end

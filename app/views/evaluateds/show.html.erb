@@ -4,3 +4,18 @@
   <p>E-mail: <%= @evaluated.email %></p>
   <p>Data de nascimento: <%= @evaluated.birthdate.strftime("%d/%m/%Y") %></p>
 </div>
+
+<div>
+  <h4>Instrumentos aplicados:</h4>
+  <div>
+    <% @evaluated.instruments_applied.each do |instrument_applied| %>
+      <p><%= instrument_applied.instrument.name %></p>
+      <p>Descrição: <%= instrument_applied.instrument.description %></p>
+      <% if instrument_applied.status == 'not_started' %>
+        <p>Status: Não iniciado</p>
+      <% elsif instrument_applied.status == 'finished' %>
+        <p>Status: Finalizado</p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

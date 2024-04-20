@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     get 'select_evaluateds', on: :member
     post 'apply', on: :member
   end
+
+  resources :instruments_applied, only: %i[show]
 end

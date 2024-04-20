@@ -1,0 +1,9 @@
+<h1>Olá, <%= @evaluated.name %>!</h1>
+
+<p>Você recebeu um novo instrumento para ser avaliado:</p>
+
+<h2><%= @instrument.name %></h2>
+<p><%= @instrument.description %></p>
+
+<p>Para iniciar a avaliação, acesse o link abaixo:</p>
+<%= link_to 'Clique aqui para acessar o instrumento', instruments_applied_url(@instrument_applied) %>
