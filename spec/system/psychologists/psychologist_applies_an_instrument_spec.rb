@@ -22,6 +22,7 @@ describe 'Psicologo aplica um instrumento' do
     expect(instrument.evaluateds).to include evaluated_2
     expect(page).to have_content 'Instrumento aplicado com sucesso'
     expect(page).to have_current_path root_path
+    expect(ActionMailer::Base.deliveries.count).to eq(2)
   end
 
   context 'sem sucesso' do

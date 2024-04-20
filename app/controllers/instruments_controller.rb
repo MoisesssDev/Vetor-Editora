@@ -28,7 +28,9 @@ class InstrumentsController < ApplicationController
 
   def create_instruments_applied(evaluateds_ids, instrument)
     evaluateds_ids.each do |evaluated_id|
-      instrument.instruments_applied.create(evaluated_id: evaluated_id, status: :not_started)
+      instrument_applied = instrument.instruments_applied.create(evaluated_id: evaluated_id, status: :not_started)
+      evaluated = Evaluated.find(evaluated_id)
+      InstrumentsAppliedMailer.notify(evaluated, instrument_applied, instrument).deliver_later
     end
   end
 
