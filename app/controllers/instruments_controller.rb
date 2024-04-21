@@ -1,5 +1,5 @@
 class InstrumentsController < ApplicationController
-  before_action :authenticate_psychologist!
+  before_action :authenticate_psychologist!, only: %i[index select_evaluateds apply]
 
   def index
     @instruments = Instrument.all
@@ -23,6 +23,8 @@ class InstrumentsController < ApplicationController
     end
 
   end
+
+  def answer ; end
 
   private 
 

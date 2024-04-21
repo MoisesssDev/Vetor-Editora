@@ -1,5 +1,5 @@
 class EvaluatedsController < ApplicationController
-  before_action :authenticate_psychologist!
+  before_action :authenticate_psychologist!, only: %i[new create show]
   before_action :set_psychologist, only: %i[new create]
 
   def new

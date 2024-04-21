@@ -18,4 +18,23 @@
     </div>
   </div>
 
+<% else %>
+  <%= form_with(model: @evaluated, 
+                url: verifications_instruments_applied_path(@instrument_applied)) do |form| %>
+
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf %>
+
+    <%= form.label :birthdate %>
+    <%= form.date_field :birthdate %>
+
+    <%= form.submit 'Próximo' %>
+  <% end %>
+
 <% end %>
