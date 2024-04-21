@@ -1,3 +1,5 @@
 class InstrumentsAppliedController < ApplicationController
-  def show; end
+  def show
+    @instrument_applied = InstrumentsApplied.find(params[:id])
+  end
 end

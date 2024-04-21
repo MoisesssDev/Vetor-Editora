@@ -9,7 +9,7 @@
   <h4>Instrumentos aplicados:</h4>
   <div>
     <% @evaluated.instruments_applied.each do |instrument_applied| %>
-      <p><%= instrument_applied.instrument.name %></p>
+      <p><%= link_to instrument_applied.instrument.name, instruments_applied_path(instrument_applied) %></p>
       <p>Descrição: <%= instrument_applied.instrument.description %></p>
       <% if instrument_applied.status == 'not_started' %>
         <p>Status: Não iniciado</p>
