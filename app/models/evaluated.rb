@@ -7,10 +7,8 @@ class Evaluated < ApplicationRecord
   validates :cpf, presence: true, uniqueness: true, length: { is: 11 }
 
   def match_verification_data?(data)
-    name == data[:name] && cpf == data[:cpf] && email == data[:email] && formatted_birthdate == data[:birthdate]
+    name == data[:name] && cpf == data[:cpf] && email == data[:email] &&
+    birthdate.to_date == data[:birthdate].to_date
   end
 
-  def formatted_birthdate
-    birthdate.strftime('%d/%m/%Y')
-  end
 end
