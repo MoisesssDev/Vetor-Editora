@@ -1,0 +1,19 @@
+<h1>Responder Instrumento</h1>
+
+<%= form_with(model: @instrument_applied, url: finished_instruments_applied_path(@instrument_applied)) do |form| %>
+  <% @instrument.questions.each do |question| %>
+    <div id=<%= "question_#{question.id}" %>>
+      <p><strong><%= question.content %></strong></p>
+      <% question.answers.each do |answer| %>
+        <label>
+          <%= radio_button_tag "answers[option_#{question.id}]", answer.value %>
+          <%= answer.content %>
+        </label>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit 'Próximo' %>
+  </div>
+<% end %>

@@ -32,7 +32,7 @@ describe 'Avaliado é redirecionado para o sistema' do
     fill_in 'Data de nascimento', with: '01/01/1980'
     click_on 'Próximo'
 
-    expect(page).to have_current_path(answer_instrument_path(instrument))
+    expect(page).to have_current_path(answer_instruments_applied_path(instruments_applied))
     expect(page).to have_content('Agora você pode acessar o sistema')
   end
 

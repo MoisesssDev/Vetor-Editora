@@ -24,8 +24,6 @@ class InstrumentsController < ApplicationController
 
   end
 
-  def answer ; end
-
   private 
 
   def create_instruments_applied(evaluateds_ids, instrument)

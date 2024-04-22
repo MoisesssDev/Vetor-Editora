@@ -6,4 +6,8 @@ class InstrumentsApplied < ApplicationRecord
     not_started: 'Não iniciado',
     finished: 'Finalizado',
   }
+
+  def finish!
+    update(status: :finished)
+  end
 end

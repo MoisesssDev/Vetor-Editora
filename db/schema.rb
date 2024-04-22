@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_19_195112) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_22_181351) do
+  create_table "answers", force: :cascade do |t|
+    t.string "content"
+    t.integer "value"
+    t.integer "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
   create_table "evaluateds", force: :cascade do |t|
     t.string "name"
     t.string "cpf"
@@ -52,7 +61,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_19_195112) do
     t.index ["reset_password_token"], name: "index_psychologists_on_reset_password_token", unique: true
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.string "content"
+    t.integer "instrument_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrument_id"], name: "index_questions_on_instrument_id"
+  end
+
+  add_foreign_key "answers", "questions"
   add_foreign_key "evaluateds", "psychologists"
   add_foreign_key "instruments_applieds", "evaluateds"
   add_foreign_key "instruments_applieds", "instruments"
+  add_foreign_key "questions", "instruments"
 end
