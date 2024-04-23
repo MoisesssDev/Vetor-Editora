@@ -74,7 +74,7 @@ body {
 
 .container-form {
   border-radius: 50px;
-  background-color: #F4F2F2;
+  /* background-color: #F4F2F2; */
   min-width: 450px;
   display: flex;
   flex-direction: column;
@@ -89,17 +89,27 @@ body {
 }
 
 .field {
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
+  /* padding: 10px 50px; */
 }
 
 .field label {
-  padding-right: 10px;
+  padding-right: 5px;
+  white-space: nowrap;
+}
+
+.field em {
+  font-size: 10px;
+  padding-right: 5px;
+  white-space: nowrap;
 }
 
 .input-field {
-  width: 60%;
+  width: 100%;
   padding: 5px;
   margin: 10px 0;
   border: none;
