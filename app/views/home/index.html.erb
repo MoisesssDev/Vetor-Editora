@@ -1,13 +1,18 @@
 <div>
   <% if psychologist_signed_in? %>
-    <%= link_to 'Cadastrar avaliado', new_evaluated_path %>
-    <%= link_to 'Ver instrumentos', instruments_path %>
+    <div class="menu-home">
+      <%= link_to 'Cadastrar avaliado', new_evaluated_path, class: 'button' %>
+      <%= link_to 'Ver instrumentos', instruments_path, class: 'button' %>
+    </div>
 
-    <p>Lista de pacientes</p>
-    
-    <% @evaluateds.each do |evaluated| %>
-      <p><%= link_to evaluated.name, evaluated_path(evaluated) %></p>
-    <% end %>
+    <div class="container-evaluateds">
+      <h2>Lista de avaliados cadastrados</h2>
+      
+      <% @evaluateds.each do |evaluated| %>
+        <p><%= link_to evaluated.name, evaluated_path(evaluated) %> | <%= evaluated.email %></p>
+      <% end %>
+
+    </div>
 
   <% else %>
     <%= link_to new_psychologist_session_path do %>
