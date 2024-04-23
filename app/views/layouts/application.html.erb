@@ -12,9 +12,12 @@
 
   <body>
     <nav id="navbar">
+      <%= image_tag 'logo-vetor-presente.png' %>
       <% if psychologist_signed_in? %>
         <%= button_to t(:log_out), destroy_psychologist_session_path, method: :delete %>
         <%= current_psychologist.email %>
+      <% else %>
+        <%= link_to 'Fazer login', new_psychologist_session_path %>
       <%end%>
     </nav>
 

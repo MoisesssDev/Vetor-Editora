@@ -8,7 +8,7 @@ describe 'Psicologo faz logout' do
     visit root_path
     click_on 'Sair'
 
-    expect(page).to have_content 'Entrar como Psicólogo'
+    expect(page).to have_content 'Fazer login'
     within 'nav' do
       expect(page).not_to have_content psychologist.email
       expect(page).not_to have_button 'Sair'

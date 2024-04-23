@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Psicologo cria conta' do
   it 'com sucesso' do
     visit root_path
-    click_on 'Entrar como Psicólogo'
+    click_on 'Fazer login'
     click_on 'Criar conta'
     fill_in 'E-mail', with: 'luis@psicologo.com'
     fill_in 'Senha', with: '123456'
