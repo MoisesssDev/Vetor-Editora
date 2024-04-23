@@ -1,14 +1,17 @@
-<h1>Selecione os Avaliados para <%= @instrument.name %></h1>
+<div class="container-instruments">
+  <h1>Selecione os Avaliados para <%= @instrument.name %></h1>
 
-<%= form_with(url: apply_instrument_path(@instrument), method: :post) do |form| %>
-  <% @evaluateds.each do |evaluated| %>
-    <div class="field">
-      <%= check_box_tag 'evaluateds_ids[]', evaluated.id, id: evaluated.name %>
-      <%= label_tag evaluated.name %>
+  <%= form_with(url: apply_instrument_path(@instrument), method: :post) do |form| %>
+    <% @evaluateds.each do |evaluated| %>
+      <div class="field-check">
+        <%= check_box_tag 'evaluateds_ids[]', evaluated.id, id: evaluated.name %>
+        <%= label_tag evaluated.name %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= form.submit 'Aplicar', class: 'button' %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit 'Aplicar' %>
-  </div>
-<% end %>
+</div>
