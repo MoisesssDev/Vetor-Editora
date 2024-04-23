@@ -18,9 +18,10 @@ body {
   padding: 0 20px;
 }
 
-.logout {
+.button-two {
   font-weight: 600;
   border: 3px solid #242258;
+  color: #242258;
   background-color: #fff;
   padding: 5px 20px;
   text-align: center;
@@ -31,7 +32,7 @@ body {
   transition: 0.3s;
 }
 
-.logout:hover {
+.button-two:hover {
   background-color: #242258;
   color: white;
 }
@@ -195,4 +196,17 @@ body {
   width: 70%;
   display: flex;
   justify-content: end;
+}
+
+.container-instruments {
+  width: 60%;
+  margin: 100px auto;
+}
+
+.card-instrument {
+  padding: 10px;
+}
+
+.card-instrument h3 {
+  font-size: 28px;
 }

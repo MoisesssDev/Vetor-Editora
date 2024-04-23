@@ -19,7 +19,7 @@
       <% if psychologist_signed_in? %>
         <div class="menu-nav">
           <p><%= current_psychologist.email %></p>
-          <%= button_to t(:log_out), destroy_psychologist_session_path, method: :delete, class: 'logout' %>
+          <%= button_to t(:log_out), destroy_psychologist_session_path, method: :delete, class: 'button-two' %>
         </div>
       <% else %>
         <% if current_page?(root_path) %>

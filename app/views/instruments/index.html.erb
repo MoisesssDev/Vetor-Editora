@@ -1,9 +1,9 @@
-<div>
+<div class="container-instruments">
   <% @instruments.each do |instrument| %>
-    <div>
+    <div class="card-instrument">
       <h3><%= instrument.name %></h3>
       <p><%= instrument.description %></p>
-      <%= link_to 'Aplicar instrumento', select_evaluateds_instrument_path(instrument) %>
+      <%= link_to 'Aplicar instrumento', select_evaluateds_instrument_path(instrument), class: 'button-two' %>
     </div>
   
   <% end %>
