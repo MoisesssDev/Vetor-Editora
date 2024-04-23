@@ -1,42 +1,51 @@
-<h1> Cadastro de novo avaliado </h1>
-
-<%= form_with(model: @evaluated, local: true, data: { turbo: false }) do |form| %>
-
-  <% if @evaluated.errors.any? %>
-    <div id="error_explanation">
-      <h2>Não foi possível cadastrar o avaliado:</h2>
-
-      <ul>
-      <% @evaluated.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="centralize">
+  <div class="container-form">
+    <div class="container-logo">
+      <%= image_tag 'logo-white.png', id: 'logo-white' %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <h2> Cadastro de novo avaliado </h2>
+
+    <%= form_with(model: @evaluated, local: true, data: { turbo: false }) do |form| %>
+
+      <% if @evaluated.errors.any? %>
+        <div id="error_explanation">
+          <h2>Não foi possível cadastrar o avaliado:</h2>
+
+          <ul>
+          <% @evaluated.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: 'input-field' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :cpf %>
+        <%= form.text_field :cpf, class: 'input-field' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.email_field :email, class: 'input-field' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :birthdate %>
+        <%= form.date_field :birthdate, class: 'input-field' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit 'Cadastrar', class: 'button' %>
+      </div>
+    <% end %>
+
+
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birthdate %>
-    <%= form.date_field :birthdate %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Cadastrar' %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', root_path %>
