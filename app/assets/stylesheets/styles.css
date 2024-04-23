@@ -115,6 +115,7 @@ body {
 }
 
 .container-form h2 {
+  margin: 20px 10px;
   font-size: 24px;
   text-align: center;
 }

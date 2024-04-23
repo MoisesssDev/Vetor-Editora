@@ -19,22 +19,41 @@
   </div>
 
 <% else %>
-  <%= form_with(model: @evaluated, 
-                url: verifications_instruments_applied_path(@instrument_applied)) do |form| %>
+  <div class="centralize">
+    <div class="container-form">
+      <div class="container-logo">
+        <%= image_tag 'logo-white.png', id: 'logo-white' %>
+      </div>
 
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+      <h2> Confirme seus dados para iniciar o instrumento </h2>
+      <%= form_with(model: @evaluated, 
+                    url: verifications_instruments_applied_path(@instrument_applied)) do |form| %>
 
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+        <div class="field">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'input-field' %>
+        </div>
 
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf %>
+        <div class="field">
+          <%= form.label :cpf %>
+          <%= form.text_field :cpf, class: 'input-field' %>
+        </div>
 
-    <%= form.label :birthdate %>
-    <%= form.date_field :birthdate %>
+        <div class="field">
+          <%= form.label :email %>
+          <%= form.email_field :email, class: 'input-field' %>
+        </div>
 
-    <%= form.submit 'Próximo' %>
-  <% end %>
+        <div class="field">
+          <%= form.label :birthdate %>
+          <%= form.date_field :birthdate, class: 'input-field' %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit 'Próximo', class: 'button' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 <% end %>
