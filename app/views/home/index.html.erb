@@ -10,18 +10,26 @@
     <% end %>
 
   <% else %>
-    <%= image_tag 'header-vetor.png', class: 'responsive-img' %>
+    <%= link_to new_psychologist_session_path do %>
+      <%= image_tag 'header-vetor.png', class: 'responsive-img' %>
+    <% end %>
 
-    <%= image_tag 'icons8-mind-100.png' %>
-    <p>Explore a complexidade da mente humana com uma ampla gama de testes psicológicos online.</p>
+    <div id="section-header">
+      <div class="card-header">
+        <%= image_tag 'icons8-mind-100.png' %>
+        <p class="text-card">Explore a complexidade da mente humana com uma ampla gama de testes psicológicos online.</p>
+      </div>
 
-    <%= image_tag 'icons8-results-96.png' %>
-    <p>Obtenha resultados confiáveis e precisos, desenvolvidos por especialistas.</p>
+      <div class="card-header">
+        <%= image_tag 'icons8-results-96.png' %>
+        <p class="text-card">Obtenha resultados confiáveis e precisos, desenvolvidos por especialistas.</p>
+      </div>
 
-    <%= image_tag 'icons8-calendar-100.png' %>
-    <p>Processo de avaliação com testes acessíveis a qualquer hora, em qualquer lugar.</p>
+      <div class="card-header">
+        <%= image_tag 'icons8-calendar-100.png' %>
+        <p class="text-card">Processo de avaliação com testes acessíveis a qualquer hora, em qualquer lugar.</p>
+      </div>
 
-    <%= image_tag 'icons8-book-100.png' %>
-    <p>Resultados precisos e imparciais, comprovadas por metodologias  e algoritmos avançados.</p>
+    </div>
   <% end %>
 </div>
