@@ -1,18 +1,18 @@
 <% if psychologist_signed_in? %>
 
-  <div>
-    <div>
-      <h3><%= @instrument_applied.instrument.name %></h3>
-      <p><%= @instrument_applied.instrument.description %></p>
-
+  <div class="container-details">
+    
+    <h1><%= @instrument_applied.instrument.name %></h1>
+    <p><%= @instrument_applied.instrument.description %></p>
+    
+    <div class="info-instrument">
       <% if @instrument_applied.status == 'not_started' %>
         <p>Status: Não iniciado</p>
         <strong>Resultado: </strong>
         <p>Ainda não possui resultado</p>
       <% elsif @instrument_applied.status == 'finished' %>
         <p>Status: Finalizado</p>
-        <strong>Resultado: </strong>
-        <p><%= @instrument_applied.result %></p>
+        <p><strong>Resultado: </strong><%= @instrument_applied.result %></p>
       <% end %>
       
     </div>

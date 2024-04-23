@@ -1,5 +1,6 @@
 body {
   color: #242258;
+  letter-spacing: 1px;
 }
 
 #navbar {
@@ -222,6 +223,7 @@ body {
 }
 
 .card-details-instruments h2{
+  letter-spacing: 2px;
   text-align: center;
   font-size: 30px;
   margin-bottom: 60px;
@@ -235,4 +237,9 @@ body {
   color: #242258;
   font-weight: 500;
   font-size: 20px;
+}
+
+.info-instrument {
+  margin-top: 40px;
+  line-height: 0.6;
 }
