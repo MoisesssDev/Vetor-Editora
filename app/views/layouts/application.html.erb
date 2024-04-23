@@ -17,8 +17,10 @@
       <% end %>
       
       <% if psychologist_signed_in? %>
-        <%= button_to t(:log_out), destroy_psychologist_session_path, method: :delete %>
-        <%= current_psychologist.email %>
+        <div class="menu-nav">
+          <p><%= current_psychologist.email %></p>
+          <%= button_to t(:log_out), destroy_psychologist_session_path, method: :delete, class: 'logout' %>
+        </div>
       <% else %>
         <% if current_page?(root_path) %>
           <%= link_to 'Fazer login', new_psychologist_session_path, class: 'button' %>
