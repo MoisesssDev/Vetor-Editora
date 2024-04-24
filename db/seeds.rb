@@ -1,9 +1,12 @@
 psychologist = Psychologist.create!(email: 'luis@psicologo.com', password: '123456')
 
 evaluateds_data = [
-  { name: 'Fernando', cpf: '12345678901', email: 'fernando@paciente.com', birthdate: '1980-01-01' },
-  { name: 'João', cpf: '12345678902', email: 'joao@paciente.com', birthdate: '1981-02-02' },
-  { name: 'Maria', cpf: '12345678903', email: 'maria@paciente.com', birthdate: '1982-03-03' }
+  { name: 'Fernando Cardoso', cpf: '12345678901', email: 'fernando@paciente.com', birthdate: '1980-01-01' },
+  { name: 'João Ricardo', cpf: '12345678902', email: 'joao@paciente.com', birthdate: '1981-02-02' },
+  { name: 'Maria', cpf: '12345678903', email: 'maria@paciente.com', birthdate: '1982-03-03' },
+  { name: 'Helena da Silva', cpf: '12345678904', email: 'helena@paciente.com', birthdate: '1982-03-03' },
+  { name: 'Silvana Rita', cpf: '12345678905', email: 'silvana@paciente.com', birthdate: '1983-03-03' },
+  { name: 'Luiza Cavalcante', cpf: '12345678906', email: 'luiza@paciente.com', birthdate: '1984-03-03' }
 ]
 
 evaluateds_data.each do |data|

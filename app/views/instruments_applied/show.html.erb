@@ -7,7 +7,7 @@
     
     <div class="info-instrument">
       <% if @instrument_applied.status == 'not_started' %>
-        <p>Status: Não iniciado</p>
+        <p><strong>Status:</strong> Não iniciado</p>
         <strong>Resultado: </strong>
         <p>Ainda não possui resultado</p>
       <% elsif @instrument_applied.status == 'finished' %>
