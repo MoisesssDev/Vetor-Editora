@@ -1,19 +1,22 @@
-<h1>Responder Instrumento</h1>
+<div class="container-instruments">
+  <h1>Responder Instrumento: <%= @instrument.name %></h1>
 
-<%= form_with(model: @instrument_applied, url: finished_instruments_applied_path(@instrument_applied)) do |form| %>
-  <% @instrument.questions.each do |question| %>
-    <div id=<%= "question_#{question.id}" %>>
-      <p><strong><%= question.content %></strong></p>
-      <% question.answers.each do |answer| %>
-        <label>
-          <%= radio_button_tag "answers[option_#{question.id}]", answer.value %>
-          <%= answer.content %>
-        </label>
-      <% end %>
+  <%= form_with(model: @instrument_applied, url: finished_instruments_applied_path(@instrument_applied)) do |form| %>
+    <% @instrument.questions.each do |question| %>
+      <div id=<%= "question_#{question.id}" %> class="question">
+        <p><strong><%= question.content %></strong></p>
+        <% question.answers.each do |answer| %>
+          <label>
+            <%= radio_button_tag "answers[option_#{question.id}]", answer.value %>
+            <%= answer.content %>
+          </label>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= form.submit 'Próximo', class: 'button' %>
     </div>
   <% end %>
 
-  <div>
-    <%= form.submit 'Próximo' %>
-  </div>
-<% end %>
+</div>

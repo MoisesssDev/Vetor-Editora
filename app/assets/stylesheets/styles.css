@@ -205,6 +205,10 @@ body {
   margin: 100px auto;
 }
 
+.container-instruments h1 {
+  margin-bottom: 50px;
+}
+
 .card-instrument {
   padding: 10px;
 }
@@ -243,4 +247,15 @@ body {
 .info-instrument {
   margin-top: 40px;
   line-height: 0.6;
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+.finished-msg {
+  line-height: 0.5;
+  width: 100%;
+  margin-top: 150px;
+  text-align: center;
 }
