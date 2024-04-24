@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/rails
+      - gem_cache:/usr/local/bundle
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: "sqlite3:/rails/db/development.sqlite3"
+
+volumes:
+  gem_cache:
