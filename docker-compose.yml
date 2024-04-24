@@ -13,7 +13,6 @@ services:
       - gem_cache:/usr/local/bundle
     environment:
       RAILS_ENV: development
-      DATABASE_URL: "sqlite3:/rails/db/development.sqlite3"
 
 volumes:
   gem_cache:
