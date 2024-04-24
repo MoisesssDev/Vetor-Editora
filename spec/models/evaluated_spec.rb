@@ -88,4 +88,16 @@ RSpec.describe Evaluated, type: :model do
       end
     end
   end
+
+  describe '#match_verification_data?' do
+    it 'true' do
+      psychologist = Psychologist.create!(email: 'fernando@psicologo.com', password: '123456')
+      evaluated = psychologist.evaluateds.new(name: 'Fulano', cpf: '12345678901', 
+                                              email: 'fulano@gmail.com', birthdate: Date.today)
+
+      data = { name: 'Fulano', cpf: '12345678901', email: 'fulano@gmail.com', birthdate: Date.today }
+
+      expect(evaluated.match_verification_data?(data)).to be true
+    end
+  end
 end
